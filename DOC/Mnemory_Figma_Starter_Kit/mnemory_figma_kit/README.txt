@@ -19,3 +19,16 @@
 - Font: Inter / Pretendard / Noto Sans KR
 
 원하는 카피/컴포넌트 구조 알려주시면 바로 반영해 확장판을 만들어 드릴게요.
+
+## Flutter static handoff (`SRC/mnemory-app`)
+1. Copy `/screens/*.svg` -> `SRC/mnemory-app/assets/screens/` and `/components/icons/*.svg` -> `SRC/mnemory-app/assets/icons/`. Keep the filenames so widgets can refer to the exact states (00_splash, 01_home, ...).
+2. Declare the folders plus `assets/mock/` inside the Flutter `pubspec.yaml` and add `flutter_svg` so the SVGs can be rendered without rasterizing in advance.
+3. Drop any review data inside `assets/mock/` (for example `cards.json`, `topics.json`). The offline runner only needs lightweight arrays such as:
+   ```
+   [
+     {"id":"topic-esp","title":"Beginner Spanish","level":"A1"},
+     {"id":"topic-ai","title":"AI Literacy","level":"Core"}
+   ]
+   ```
+4. In `lib/main.dart`, load the mock JSON with `rootBundle.loadString` and pair each state with the right screen asset (`SvgPicture.asset('assets/screens/02_chat.svg')`). This mirrors the exact flows shown in Figma while staying completely offline.
+5. To keep snapshots in sync, re-export SVGs from Figma into this folder whenever components change, then re-run `flutter pub get && flutter run` from `SRC/mnemory-app`.

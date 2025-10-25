@@ -1,5 +1,48 @@
 # Mnemory
 
+## Offline Flutter sandbox (`SRC/mnemory-app`)
+Use the `SRC/mnemory-app` workspace to boot a Mnemory UI demo without hitting Firebase or the Functions code. Everything is rendered with local assets from the Figma starter kit so designers can review the flows on a device or simulator.
+
+### Prerequisites
+- Flutter 3.24+ / Dart 3.4+
+- (Optional) `fvm` to lock the toolchain, and `melos` if you later wire multiple packages
+
+### Bootstrap the workspace
+1. `cd SRC/mnemory-app`
+2. If the folder is empty, scaffold the shell project once:
+   ```bash
+   flutter create . --platforms=android,ios,web --org com.mnemory --project-name mnemory
+   flutter pub add flutter_svg google_fonts
+   ```
+3. Copy the provided UI assets so the demo can run without the backend:
+   - `DOC/Mnemory_Figma_Starter_Kit/mnemory_figma_kit/screens/*.svg` -> `assets/screens/`
+   - `DOC/Mnemory_Figma_Starter_Kit/mnemory_figma_kit/components/icons/*.svg` -> `assets/icons/`
+   - Create `assets/mock/` and drop any JSON you want to surface (see the snippet below).
+4. Declare the folders in `pubspec.yaml`:
+   ```yaml
+   flutter:
+     assets:
+       - assets/screens/
+       - assets/icons/
+       - assets/mock/
+   ```
+
+### Minimal offline state
+```json
+[
+  {"id": "mn-001", "title": "Daily Focus", "level": "Warm-up", "streak": 3},
+  {"id": "mn-045", "title": "Grammar Boost", "level": "Core", "streak": 12}
+]
+```
+Load that JSON inside `lib/main.dart` (synchronously for prototypes or via a tiny `MockRepository`) and paint the provided SVGs using `SvgPicture.asset('assets/screens/01_home.svg')`.
+
+### Run locally
+```bash
+flutter pub get
+flutter run -d chrome   # or ios / android
+```
+No network calls are required - the demo only touches the static assets that ship with this repository. When you later connect the actual repositories/services, swap the mock repository with a real data source but keep the same widget contracts so QA can continue to rely on this offline build.
+
 AI가 생성한 **100–300자 요약 카드**를 **스페이스드 리피티션** 리듬으로 보내 주는 “지능형 습관 학습기”.
 
 - **클라이언트**: Flutter (iOS/Android)

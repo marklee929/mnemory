@@ -1,0 +1,11 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="390" height="844" rx="36" fill="#FFFFFF" stroke="#DDE6EE"/>
+<rect x="0" y="0" width="390" height="96" fill="#FFFFFF" stroke="#E6ECF1"/><text x="24" y="56" font-family="Inter, Pretendard, Noto Sans KR" font-size="22" font-weight="700" fill="#0D1B2A">내 정보</text>
+<circle cx="60" cy="150" r="28" stroke="#5C47C3" stroke-width="2" fill="#FFFFFF"/>
+<text x="100" y="150" font-family="Inter, Pretendard, Noto Sans KR" font-size="16" fill="#0D1B2A">사용자 이름</text>
+<text x="100" y="172" font-family="Inter, Pretendard, Noto Sans KR" font-size="13" fill="#8AA0B2">email@example.com</text>
+<rect x="20" y="200" width="350" height="56" rx="12" fill="#F4F7FA"/><text x="36" y="234" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">알림 설정</text>
+<rect x="20" y="264" width="350" height="56" rx="12" fill="#F4F7FA"/><text x="36" y="298" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">학습 시간대</text>
+<rect x="20" y="328" width="350" height="56" rx="12" fill="#F4F7FA"/><text x="36" y="362" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">개인정보</text>
+<rect x="20" y="392" width="350" height="56" rx="12" fill="#F4F7FA"/><text x="36" y="426" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">약관 및 정책</text>
+</svg>

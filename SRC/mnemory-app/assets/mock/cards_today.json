@@ -1,0 +1,6 @@
+﻿{
+  "cards": [
+    {"title":"예시 학습 카드 1","summary":"100-300자 더미 요약","bullets":["A","B","C"]},
+    {"title":"예시 학습 카드 2","summary":"더미 요약","bullets":["X","Y","Z"]}
+  ]
+}
