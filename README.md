@@ -21,3 +21,36 @@ AI가 생성한 **100–300자 요약 카드**를 **스페이스드 리피티션
 
 ## 🧱 레포 구조
 
+mnemory/
+app/ # Flutter 앱
+lib/
+app/ # theme, router, di
+core/ # models, repo interfaces
+features/ # onboarding, topics, routine_setup, card_view, weekly_test, progress, settings
+mock/ # MockRepository(서버 없이 UI 동작)
+pubspec.yaml
+
+functions/ # Firebase Cloud Functions (Node 20+ / TypeScript)
+src/
+openai.ts # OpenAI Responses API 호출 래퍼
+generateCard.ts # 카드 생성 로직
+scheduling.ts # 슬롯 생성/푸시 스케줄
+sendPush.ts # FCM 전송
+adjustSpacing.ts # 피드백 기반 간격 조정
+guest.ts # 게스트 세션 등록/만료(TTL)
+index.ts # 함수 엔트리
+package.json
+.runtimeconfig.sample.json
+
+firestore.rules # 보안 규칙(초안)
+firestore.indexes.json
+
+docs/
+architecture.md # 시스템 아키텍처 & 시퀀스
+api.md # 앱<->커넥터 API 계약(요청/응답)
+roadmap.md
+
+tools/
+figma/ # Figma 스타터(스크린, 토큰, 아이콘)
+scripts/ # 배포/검증 스크립트
+
