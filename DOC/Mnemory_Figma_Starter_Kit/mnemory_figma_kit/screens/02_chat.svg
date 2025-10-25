@@ -1,0 +1,11 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="390" height="844" rx="36" fill="#FFFFFF" stroke="#DDE6EE"/>
+<rect x="0" y="0" width="390" height="96" fill="#FFFFFF" stroke="#E6ECF1"/><text x="24" y="56" font-family="Inter, Pretendard, Noto Sans KR" font-size="22" font-weight="700" fill="#0D1B2A">채팅</text>
+<rect x="0" y="96" width="390" height="640" fill="#FFFFFF"/>
+<rect x="20" y="120" width="260" height="56" rx="12" fill="#F4F7FA"/><text x="32" y="152" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">오늘의 요약을 알려줘</text>
+<rect x="110" y="190" width="260" height="56" rx="12" fill="#EDF0FF"/><text x="122" y="222" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">100–300자 카드입니다...</text>
+<rect x="20" y="260" width="260" height="56" rx="12" fill="#F4F7FA"/><text x="32" y="292" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#0D1B2A">난이도는 보통으로</text>
+<rect x="0" y="736" width="390" height="60" fill="#FFFFFF" stroke="#E6ECF1"/>
+<rect x="20" y="746" width="290" height="40" rx="12" fill="#F4F7FA"/>
+<rect x="320" y="746" width="50" height="40" rx="12" fill="#5C47C3"/><text x="345" y="772" text-anchor="middle" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#FFFFFF">전송</text>
+</svg>

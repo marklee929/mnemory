@@ -1,0 +1,10 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="390" height="844" rx="36" fill="#FFFFFF" stroke="#DDE6EE"/>
+<rect x="0" y="0" width="390" height="96" fill="#FFFFFF" stroke="#E6ECF1"/><text x="24" y="56" font-family="Inter, Pretendard, Noto Sans KR" font-size="22" font-weight="700" fill="#0D1B2A"> </text>
+<defs><linearGradient id="g" x1="0" y1="0" x2="390" y2="844" gradientUnits="userSpaceOnUse"><stop stop-color="#5C47C3"/><stop offset="1" stop-color="#3DC2C0"/></linearGradient></defs>
+<rect x="0" y="0" width="390" height="844" rx="36" fill="url(#g)" opacity="0.12"/>
+<circle cx="195" cy="330" r="64" stroke="#5C47C3" stroke-width="4" fill="#FFFFFF"/>
+<text x="195" y="430" text-anchor="middle" font-family="Inter, Pretendard, Noto Sans KR" font-size="28" font-weight="700" fill="#0D1B2A">Mnemory</text>
+<text x="195" y="465" text-anchor="middle" font-family="Inter, Pretendard, Noto Sans KR" font-size="14" fill="#8AA0B2">기억을 키우는 재귀 학습</text>
+<rect x="95" y="560" width="200" height="48" rx="12" fill="#5C47C3"/><text x="195" y="590" text-anchor="middle" font-family="Inter, Pretendard, Noto Sans KR" font-size="16" fill="#FFFFFF">시작하기</text>
+</svg>
