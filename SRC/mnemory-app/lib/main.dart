@@ -3,6 +3,7 @@
 import 'routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MnemoryApp());
 }
 
@@ -18,8 +19,8 @@ class MnemoryApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF5C47C3)),
         useMaterial3: true,
       ),
-      initialRoute: AppRoutes.splash,
-      routes: AppRoutes.routes,
+      initialRoute: '/splash',
+      routes: appRoutes,
     );
   }
 }
