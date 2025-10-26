@@ -1,5 +1,6 @@
 ﻿import 'package:flutter/material.dart';
 
+import 'app/theme.dart';
 import 'routes.dart';
 
 void main() {
@@ -15,10 +16,7 @@ class MnemoryApp extends StatelessWidget {
     return MaterialApp(
       title: 'Mnemory Sandbox',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF5C47C3)),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light(),
       initialRoute: '/splash',
       routes: appRoutes,
     );

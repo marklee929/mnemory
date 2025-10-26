@@ -11,41 +11,40 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  Future<void> _preload() async {
+    final text = await rootBundle.loadString('assets/mock/cards_today.json');
+    jsonDecode(text);
+  }
+
   @override
   void initState() {
     super.initState();
-    Future(_bootstrap);
-  }
-
-  Future<void> _bootstrap() async {
-    await Future.delayed(const Duration(milliseconds: 600));
-    try {
-      final text = await rootBundle.loadString('assets/mock/cards_today.json');
-      final dynamic data = json.decode(text);
-      final cardsLength = (data is Map && data['cards'] is List)
-          ? (data['cards'] as List).length
-          : 0;
-      debugPrint('cards loaded: $cardsLength');
-    } catch (error, stackTrace) {
-      debugPrint('asset load error: $error');
-      debugPrint(stackTrace.toString());
-    } finally {
-      if (!mounted) return;
-      Navigator.of(context).pushReplacementNamed('/home');
-    }
+    Future(() async {
+      final minDelay = Future.delayed(const Duration(seconds: 5));
+      try {
+        await _preload();
+      } catch (e) {
+        debugPrint('preload error: $e');
+      }
+      await minDelay;
+      if (mounted) {
+        Navigator.of(context).pushReplacementNamed('/home');
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Color(0xFF0D0F14),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 12),
-            Text('Mnemory Splash'),
-          ],
+        child: Hero(
+          tag: 'app_logo',
+          child: Image(
+            image: AssetImage('assets/logo-transparent.png'),
+            width: 140,
+            fit: BoxFit.contain,
+          ),
         ),
       ),
     );
