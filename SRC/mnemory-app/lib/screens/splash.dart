@@ -1,7 +1,4 @@
-﻿import 'dart:convert';
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
+﻿import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,22 +8,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  Future<void> _preload() async {
-    final text = await rootBundle.loadString('assets/mock/cards_today.json');
-    jsonDecode(text);
-  }
-
   @override
   void initState() {
     super.initState();
     Future(() async {
-      final minDelay = Future.delayed(const Duration(seconds: 5));
-      try {
-        await _preload();
-      } catch (e) {
-        debugPrint('preload error: $e');
-      }
-      await minDelay;
+      await Future.delayed(const Duration(seconds: 5));
       if (mounted) {
         Navigator.of(context).pushReplacementNamed('/home');
       }
@@ -36,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFF0D0F14),
+      backgroundColor: Colors.white,
       body: Center(
         child: Hero(
           tag: 'app_logo',

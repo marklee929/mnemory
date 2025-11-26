@@ -11,4 +11,3 @@ flutter:
   assets:
     - assets/mock/
     - assets/logo-transparent.png
-    - assets/logo.png

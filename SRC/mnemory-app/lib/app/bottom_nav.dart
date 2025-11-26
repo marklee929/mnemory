@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+﻿import "package:flutter/material.dart";
 
 class AppShell extends StatefulWidget {
   final int index;
@@ -22,9 +22,6 @@ class _AppShellState extends State<AppShell> {
       case 2:
         Navigator.pushReplacementNamed(context, '/chat');
         break;
-      case 3:
-        Navigator.pushReplacementNamed(context, '/profile');
-        break;
     }
   }
 
@@ -35,24 +32,19 @@ class _AppShellState extends State<AppShell> {
       bottomNavigationBar: NavigationBar(
         selectedIndex: widget.index,
         onDestinationSelected: _go,
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
         destinations: const [
           NavigationDestination(
-            icon: _LogoNavIcon(selected: false),
-            selectedIcon: _LogoNavIcon(selected: true),
-            label: '',
+            icon: _AppLogoIcon(size: 22),
+            selectedIcon: _AppLogoIcon(size: 24),
+            label: '메인',
           ),
           NavigationDestination(
             icon: Icon(Icons.menu_book_outlined),
-            label: '',
+            label: '학습',
           ),
           NavigationDestination(
             icon: Icon(Icons.chat_bubble_outline),
-            label: '',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            label: '',
+            label: '채팅',
           ),
         ],
       ),
@@ -60,21 +52,17 @@ class _AppShellState extends State<AppShell> {
   }
 }
 
-class _LogoNavIcon extends StatelessWidget {
-  final bool selected;
-  const _LogoNavIcon({required this.selected});
+class _AppLogoIcon extends StatelessWidget {
+  final double size;
+  const _AppLogoIcon({this.size = 22});
 
   @override
   Widget build(BuildContext context) {
-    final double size = selected ? 30 : 26;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Image.asset(
-        'assets/logo-transparent.png',
-        height: size,
-        width: size,
-        fit: BoxFit.contain,
-      ),
+    return Image.asset(
+      'assets/logo-transparent.png',
+      width: size,
+      height: size,
+      fit: BoxFit.contain,
     );
   }
 }
